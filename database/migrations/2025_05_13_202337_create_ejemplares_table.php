@@ -13,13 +13,8 @@ return new class extends Migration
     {
         Schema::create('ejemplares', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo');
-            $table->unsignedBigInteger('id_tipo')->nullable();
-            $table->unsignedBigInteger('id_idioma')->nullable();
-            $table->string('anyo_publicacion');
-            $table->string('edicion');
-            $table->foreign('id_idioma')->references('id')->on('idiomas')->nullOnDelete()->nullOnUpdate();
-            $table->foreign('id_tipo')->references('id')->on('tipos')->nullOnDelete()->nullOnUpdate();
+            $table->unsignedBigInteger('id_obra')->nullable();
+            $table->foreign('id_obra')->references('id')->on('obras')->nullOnDelete()->nullOnUpdate();
             $table->timestamps();
         });
     }

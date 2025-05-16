@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('mesas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_sala')->after('id')->nullable();
+            $table->unsignedBigInteger('id_sala')->nullable();
             $table->boolean('pc');
             $table->foreign('id_sala')->references('id')->on('salas')->nullOnDelete()->nullOnUpdate();
             $table->timestamps();

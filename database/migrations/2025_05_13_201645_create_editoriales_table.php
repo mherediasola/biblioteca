@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('copias_fisicas', function (Blueprint $table) {
+        Schema::create('editoriales', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_ejemplar')->nullable();
-            $table->foreign('id_ejemplar')->references('id')->on('ejemplares')->nullOnDelete()->nullOnUpdate();
+            $table->string('nombre');
             $table->timestamps();
         });
     }
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('copias_fisicas');
+        Schema::dropIfExists('editoriales');
     }
 };
