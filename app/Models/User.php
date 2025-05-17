@@ -20,7 +20,7 @@ class User extends Authenticatable
 
     protected $table = 'users';
     
-    public function roles(){
+    public function role(){
         return $this->belongsTo(Rol::class, 'id_rol');
     }
 
@@ -29,7 +29,11 @@ class User extends Authenticatable
     }
 
     public function mesas(){
-        return $this->belongsToMany(Mesa::class, 'id_mesa');
+        return $this->belongsToMany(Mesa::class, 'reservas', 'id_usuario', 'id_mesa', 'id', 'id');
+    }
+
+    public function prestamos(){
+        return $this->hasMany(Prestamo::class);
     }
 
     protected $fillable = [

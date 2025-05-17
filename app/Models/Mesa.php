@@ -8,15 +8,12 @@ class Mesa extends Model
 {
     protected $table = 'mesas';
     
-    public function salas(){
+    public function sala(){
         return $this->belongsTo(Sala::class, 'id_sala');
     }
-
-    public function users(){
-        return $this->belongsToMany(User::class, 'id_usuario');
+/*
+    public function estaReservada($fecha, $hora_inicio, $hora_final){
+        return $this-> faltan cositas 
     }
-
-    public function hasMesa($mesa){
-        return $this->salas && $this->salas->nombre == $mesa;
-    }
+ */  
 }

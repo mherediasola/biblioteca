@@ -7,4 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Tipo extends Model
 {
     protected $table = 'tipos';
+
+    public function obras(){
+        return $this->hasMany(Obra::class);
+    }
 }

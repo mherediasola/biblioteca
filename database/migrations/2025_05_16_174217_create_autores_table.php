@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('apellidos');
+            $table->unsignedBigInteger('id_pais')->nullable();
+            $table->foreign('id_pais')->references('id')->on('paises')->nullOnDelete()->nullOnUpdate();
             $table->timestamps();
         });
     }

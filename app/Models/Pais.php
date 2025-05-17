@@ -7,4 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Pais extends Model
 {
     protected $table = 'paises';
+
+    public function autores(){
+        return $this->hasMany(Autor::class);
+    }
 }

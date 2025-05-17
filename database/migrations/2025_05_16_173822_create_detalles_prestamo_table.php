@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('detalles_prestamo', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->unsignedBigInteger('id_prestamo')->nullable();
             $table->unsignedBigInteger('id_ejemplar')->nullable();
+            $table->unique(['id_prestamo', 'id_ejemplar']);
+            $table->timestamps();
             $table->foreign('id_prestamo')->references('id')->on('prestamos')->nullOnDelete()->nullOnUpdate();
             $table->foreign('id_ejemplar')->references('id')->on('ejemplares')->nullOnDelete()->nullOnUpdate();
         });
