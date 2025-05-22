@@ -18,6 +18,9 @@ class DatabaseSeeder extends Seeder
         $this->call(Tipos::class);
         $this->call(Editoriales::class);
         $this->call(Salas::class);
+        $this->call(Mesas::class);
         $this->call(Paises::class);
+        $this->call(Autores::class);
+        $this->call(Obras::class);
     }
 }

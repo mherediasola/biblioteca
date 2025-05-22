@@ -21,5 +21,10 @@ class Editoriales extends Seeder
         Editorial::create(['nombre' => 'Destino']);
         Editorial::create(['nombre' => 'Tusquets']);
         Editorial::create(['nombre' => 'Seix Barral']);
+        Editorial::create(['nombre' => 'RAE']);
+        Editorial::create(['nombre' => 'LVL Editions']);
+        Editorial::create(['nombre' => 'Mondadori']);
+        Editorial::create(['nombre' => 'Penguin']);
+        Editorial::create(['nombre' => 'Debolsillo']);
     }
 }

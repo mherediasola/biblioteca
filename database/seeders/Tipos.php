@@ -16,5 +16,6 @@ class Tipos extends Seeder
         Tipo::create(['nombre' => 'Libro']);
         Tipo::create(['nombre' => 'Revista']);
         Tipo::create(['nombre' => 'Artículo']);
+        Tipo::create(['nombre' => 'Ebook']);
     }
 }
