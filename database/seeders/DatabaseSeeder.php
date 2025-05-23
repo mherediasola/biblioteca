@@ -22,5 +22,8 @@ class DatabaseSeeder extends Seeder
         $this->call(Paises::class);
         $this->call(Autores::class);
         $this->call(Obras::class);
+        $this->call(Users::class);
+        $this->call(Obras_escritas_Autores::class);
+        $this->call(Reservas::class);
     }
 }

@@ -43,6 +43,11 @@ class Autores extends Seeder
                       'apellidos' => 'Brahim Seid',
                       'id_pais' => '5',
         ]);
+
+        Autor::create(['nombre' => 'Gabriel',
+                      'apellidos' => 'García Márquez',
+                      'id_pais' => '5',
+        ]);
         
     }
 }

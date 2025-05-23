@@ -79,12 +79,12 @@ class Obras extends Seeder
                       'edicion' => '1ª'
         ]);
 
-        Obra::create(['titulo' => 'Un enfant du pays', 
+        Obra::create(['titulo' => 'El amor en los tiempos del cólera', 
                       'id_tipo' => '1', 
-                      'anyo_publicacion' => '1995', 
-                      'id_idioma' => '3', 
-                      'id_editorial' => '5', 
-                      'edicion' => '4ª'
+                      'anyo_publicacion' => '2007', 
+                      'id_idioma' => '1', 
+                      'id_editorial' => '13', 
+                      'edicion' => '2ª'
         ]);
 
         Obra::create(['titulo' => 'Un enfant du pays', 
