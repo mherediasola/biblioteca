@@ -25,5 +25,8 @@ class DatabaseSeeder extends Seeder
         $this->call(Users::class);
         $this->call(Obras_escritas_Autores::class);
         $this->call(Reservas::class);
+        $this->call(Ejemplares::class);
+        $this->call(Prestamos::class);
+        $this->call(Detalles_prestamo::class);
     }
 }

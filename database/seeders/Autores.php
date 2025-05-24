@@ -16,37 +16,37 @@ class Autores extends Seeder
         //nombre	apellidos	id_pais	
         Autor::create(['nombre' => 'Miguel (de)',
                       'apellidos' => 'Cervantes Saavedra',
-                      'id_pais' => '1',
+                      'id_pais' => 1,
         ]);
 
         Autor::create(['nombre' => 'Dante',
                       'apellidos' => 'Alighieri',
-                      'id_pais' => '2',
+                      'id_pais' => 2,
         ]);
 
         Autor::create(['nombre' => 'Umberto',
                       'apellidos' => 'Eco',
-                      'id_pais' => '2',
+                      'id_pais' => 2,
         ]);
 
         Autor::create(['nombre' => 'Fernando',
                       'apellidos' => 'Pesoa',
-                      'id_pais' => '3',
+                      'id_pais' => 3,
         ]);
 
         Autor::create(['nombre' => 'William',
                       'apellidos' => 'Shakespeare',
-                      'id_pais' => '4',
+                      'id_pais' => 4,
         ]);
 
         Autor::create(['nombre' => 'Joseph',
                       'apellidos' => 'Brahim Seid',
-                      'id_pais' => '5',
+                      'id_pais' => 5,
         ]);
 
         Autor::create(['nombre' => 'Gabriel',
                       'apellidos' => 'García Márquez',
-                      'id_pais' => '5',
+                      'id_pais' => 5,
         ]);
         
     }
