@@ -17,24 +17,18 @@
             <label class="form-label" for="continente">Continente</label>
             <select name="continente" id="contienente" class="form-control">
                 @if (empty($pais))
-                {{-- Crear un enum con los continentes y usar un for-each para recorrerlos. Ejemplo
-                en el otro proyecto >>> biblioteca unidad 6 carpeta DWES --}}
-                    <option value="opcion">---- Elija una opción ----</option>
-                    <option value="africa" class="form-control">África</option>
-                    <option value="america" class="form-control">América</option>
-                    <option value="Asia" class="form-control">Asia</option>
-                    <option value="Antártida" class="form-control">Antártida</option>
-                    <option value="europa" class="form-control">Europa</option>
-                    <option value="oceania" class="form-control">Oceanía</option>
+                    <option value="opcion" selected>---- Elija una opción ----</option>
+                    <@foreach($continentes as $continente)
+                    <option value="{{ $continente->value }}">{{ $continente->name }}</option>
+                @endforeach
                 @else
-                    <option value="{{$pais->continente ?? ''}}" selected>{{$pais->continente ?? ''}}</option>
-                    <option value="africa" class="form-control">África</option>
-                    <option value="america" class="form-control">América</option>
-                    <option value="Asia" class="form-control">Asia</option>
-                    <option value="Antártida" class="form-control">Antártida</option>
-                    <option value="europa" class="form-control">Europa</option>
-                    <option value="oceania" class="form-control">Oceanía</option>
-                @endif    
+                    <@foreach($continentes as $continente)
+                    <option value="{{ $continente->value }}" {{$continente->value == $pais->continente ? 'selected' : '' }}>
+                        {{ $continente->name }}
+                    </option>
+                    @endforeach  
+                @endif  
+                 
             </select>
             <button class="btn btn-primary my-3" type="submit">Enviar</button>
         </form>

@@ -6,6 +6,8 @@ use App\Http\Controllers\IdiomasController;
 use App\Http\Controllers\TiposController;
 use App\Http\Controllers\SalasController;
 use App\Http\Controllers\PaisesController; 
+use App\Http\Controllers\EditorialesController;
+use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\IndexAdminController;
 
 // ********************************************PARTE ADMINISTRADOR**************************************************
@@ -55,6 +57,27 @@ Route::post('/admin/paises/insertar', [PaisesController::class, 'insertar'])->na
 Route::get('/admin/paises/formulario/{id}', [PaisesController::class, 'mostrarFormEd'])->name("formularioPaisesEd");
 Route::post('/admin/paises/formulario/{id}', [PaisesController::class, 'editar'])->name("editarPais");
 Route::delete('/admin/paises/eliminar/{id}', [PaisesController::class, 'eliminar'])->where(array('id' => '[0-9]*'))->name("eliminarPais");
+
+//EDITORIALES
+Route::get('/admin/editoriales', [EditorialesController::class, 'mostrar'])->name("editoriales");
+Route::get('/admin/editoriales/listar', [EditorialesController::class, 'listar'])->name("editorialesListar");
+Route::get('/admin/editoriales/insertar', [EditorialesController::class, 'mostrarFormIns'])->name("formularioEditorialesIns");
+Route::post('/admin/editoriales/insertar', [EditorialesController::class, 'insertar'])->name("crearEditorial");
+Route::get('/admin/editoriales/formulario/{id}', [EditorialesController::class, 'mostrarFormEd'])->name("formularioEditorialesEd");
+Route::post('/admin/editoriales/formulario/{id}', [EditorialesController::class, 'editar'])->name("editarEditorial");
+Route::delete('/admin/editoriales/eliminar/{id}', [EditorialesController::class, 'eliminar'])->where(array('id' => '[0-9]*'))->name("eliminarEditorial");
+
+//USUARIOS
+Route::get('/admin/usuarios', [UsuariosController::class, 'mostrar'])->name("usuarios");
+Route::get('/admin/usuarios/listar', [UsuariosController::class, 'listar'])->name("usuariosListar");
+Route::get('/admin/usuarios/insertar', [UsuariosController::class, 'mostrarFormIns'])->name("formularioUsuariosIns");
+Route::post('/admin/usuarios/insertar', [UsuariosController::class, 'insertar'])->name("crearUsuario");
+Route::get('/admin/usuarios/formulario/{id}', [UsuariosController::class, 'mostrarFormEd'])->name("formularioUsuariosEd");
+Route::post('/admin/usuarios/formulario/{id}', [UsuariosController::class, 'editar'])->name("editarUsuario");
+Route::delete('/admin/usuarios/eliminar/{id}', [UsuariosController::class, 'eliminar'])->where(array('id' => '[0-9]*'))->name("eliminarUsuario");
+
+
+
 
 
 //******************************************************************************************************************************************************

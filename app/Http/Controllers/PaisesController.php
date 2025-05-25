@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\Continente;
 use App\Models\Pais;
 use Illuminate\Http\Request;
 
@@ -23,7 +24,7 @@ class PaisesController extends Controller
     }
 
     public function mostrarFormIns(){
-        return view('formularioPais');
+        return view('formularioPais', ['continentes' => Continente::cases()]);
     }
 
     public function insertar(Request $request){
@@ -45,7 +46,8 @@ class PaisesController extends Controller
         $pais = Pais::where('id', $id)->first();
 
         return view('formularioPais', [
-            'pais' => $pais
+            'pais' => $pais,
+            'continentes' => Continente::cases()
         ]);
 
     }
