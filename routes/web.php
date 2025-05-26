@@ -8,6 +8,7 @@ use App\Http\Controllers\SalasController;
 use App\Http\Controllers\PaisesController; 
 use App\Http\Controllers\EditorialesController;
 use App\Http\Controllers\UsuariosController;
+use App\Http\Controllers\MesasController;
 use App\Http\Controllers\IndexAdminController;
 
 // ********************************************PARTE ADMINISTRADOR**************************************************
@@ -76,6 +77,14 @@ Route::get('/admin/usuarios/formulario/{id}', [UsuariosController::class, 'mostr
 Route::post('/admin/usuarios/formulario/{id}', [UsuariosController::class, 'editar'])->name("editarUsuario");
 Route::delete('/admin/usuarios/eliminar/{id}', [UsuariosController::class, 'eliminar'])->where(array('id' => '[0-9]*'))->name("eliminarUsuario");
 
+//MESAS
+Route::get('/admin/mesas', [MesasController::class, 'mostrar'])->name("mesas");
+Route::get('/admin/mesas/listar', [MesasController::class, 'listar'])->name("mesasListar");
+Route::get('/admin/mesas/insertar', [MesasController::class, 'mostrarFormIns'])->name("formularioMesasIns");
+Route::post('/admin/mesas/insertar', [MesasController::class, 'insertar'])->name("crearMesa");
+Route::get('/admin/mesas/formulario/{id}', [MesasController::class, 'mostrarFormEd'])->name("formularioMesasEd");
+Route::post('/admin/mesas/formulario/{id}', [MesasController::class, 'editar'])->name("editarMesa");
+Route::delete('/admin/mesas/eliminar/{id}', [MesasController::class, 'eliminar'])->where(array('id' => '[0-9]*'))->name("eliminarMesa");
 
 
 
