@@ -9,6 +9,9 @@ use App\Http\Controllers\PaisesController;
 use App\Http\Controllers\EditorialesController;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\MesasController;
+use App\Http\Controllers\AutoresController;
+use App\Http\Controllers\ObrasController;
+use App\Http\Controllers\EjemplaresController;
 use App\Http\Controllers\IndexAdminController;
 
 // ********************************************PARTE ADMINISTRADOR**************************************************
@@ -86,7 +89,31 @@ Route::get('/admin/mesas/formulario/{id}', [MesasController::class, 'mostrarForm
 Route::post('/admin/mesas/formulario/{id}', [MesasController::class, 'editar'])->name("editarMesa");
 Route::delete('/admin/mesas/eliminar/{id}', [MesasController::class, 'eliminar'])->where(array('id' => '[0-9]*'))->name("eliminarMesa");
 
+//AUTOR
+Route::get('/admin/autores', [AutoresController::class, 'mostrar'])->name("autores");
+Route::get('/admin/autores/listar', [AutoresController::class, 'listar'])->name("autoresListar");
+Route::get('/admin/autores/insertar', [AutoresController::class, 'mostrarFormIns'])->name("formularioAutoresIns");
+Route::post('/admin/autores/insertar', [AutoresController::class, 'insertar'])->name("crearAutor");
+Route::get('/admin/autores/formulario/{id}', [AutoresController::class, 'mostrarFormEd'])->name("formularioAutoresEd");
+Route::post('/admin/autores/formulario/{id}', [AutoresController::class, 'editar'])->name("editarAutor");
+Route::delete('/admin/autores/eliminar/{id}', [AutoresController::class, 'eliminar'])->where(array('id' => '[0-9]*'))->name("eliminarAutor");
 
+//OBRA
+Route::get('/admin/obras', [ObrasController::class, 'mostrar'])->name("obras");
+Route::get('/admin/obras/listar', [ObrasController::class, 'listar'])->name("obrasListar");
+Route::get('/admin/obras/insertar', [ObrasController::class, 'mostrarFormIns'])->name("formularioObrasIns");
+Route::post('/admin/obras/insertar', [ObrasController::class, 'insertar'])->name("crearObra");
+Route::get('/admin/obras/formulario/{id}', [ObrasController::class, 'mostrarFormEd'])->name("formularioObrasEd");
+Route::post('/admin/obras/formulario/{id}', [ObrasController::class, 'editar'])->name("editarObra");
+Route::delete('/admin/obras/eliminar/{id}', [ObrasController::class, 'eliminar'])->where(array('id' => '[0-9]*'))->name("eliminarObra");
 
+//EJEMPLAR
+Route::get('/admin/ejemplares', [EjemplaresController::class, 'mostrar'])->name("ejemplares");
+Route::get('/admin/ejemplares/listar', [EjemplaresController::class, 'listar'])->name("ejemplaresListar");
+Route::get('/admin/ejemplares/insertar', [EjemplaresController::class, 'mostrarFormIns'])->name("formularioEjemplaresIns");
+Route::post('/admin/ejemplares/insertar', [EjemplaresController::class, 'insertar'])->name("crearEjemplar");
+Route::get('/admin/ejemplares/formulario/{id}', [EjemplaresController::class, 'mostrarFormEd'])->name("formularioEjemplaresEd");
+Route::post('/admin/ejemplares/formulario/{id}', [EjemplaresController::class, 'editar'])->name("editarEjemplar");
+Route::delete('/admin/ejemplares/eliminar/{id}', [EjemplaresController::class, 'eliminar'])->where(array('id' => '[0-9]*'))->name("eliminarEjemplar");
 
 //******************************************************************************************************************************************************

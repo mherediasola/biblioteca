@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" type="text/css" href="{{asset ('assets/css/estilos.css') }}"/>
     <title>@yield('titulo')</title>
-    <script src="{{ asset('/vendor/bootstrap-5.3.6-dist/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ asset('/vendor/bootstrap-5.3.6/dist/js/bootstrap.bundle.min.js')}}"></script>
     <script src="https://kit.fontawesome.com/9f4bf3af88.js" crossorigin="anonymous"></script>
     <script src="{{ asset('/vendor/jQuery/jquery-3.7.1.min.js') }}"></script>
     <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
