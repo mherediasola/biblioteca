@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Prestamo;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Ejemplar;
 
 class PrestamosController extends Controller
 {
@@ -25,10 +26,12 @@ class PrestamosController extends Controller
 
     public function mostrarFormIns(){
         //$usuarios = User::all();
+        $ejemplares = Ejemplar::all();
         //Para obtener solo los usuarios con esos roles
         $usuarios = User::where('id_rol', 3)->orWhere('id_rol', 4)->get();
         return view('formularioPrestamo', [
-            'usuarios' => $usuarios             
+            'usuarios' => $usuarios,            
+            'ejemplares' => $ejemplares         
         ]);
     }
 
@@ -48,17 +51,20 @@ class PrestamosController extends Controller
         $prestamo->fecha_inicio = $request->fecha_inicio;
         $prestamo->fecha_final = $request->fecha_final;
         $prestamo->save();
+        $prestamo->ejemplares()->sync($request->id_ejemplares);
 
         return redirect('/admin/prestamos');
     }
 
     public function mostrarFormEd($id){
         $prestamo = Prestamo::where('id', $id)->first();
+        $ejemplares = Ejemplar::all();
         $usuarios = User::where('id_rol', 3)->orWhere('id_rol', 4)->get();
 
         return view('formularioPrestamo', [
             'prestamo' => $prestamo,
-            'usuarios' => $usuarios
+            'usuarios' => $usuarios,
+            'ejemplares' => $ejemplares
         ]);
 
     }
@@ -76,6 +82,7 @@ class PrestamosController extends Controller
         $prestamo->estado_activo = $request->estado_activo;
         $prestamo->fecha_inicio = $request->fecha_inicio;
         $prestamo->fecha_final = $request->fecha_final;
+        $prestamo->ejemplares()->sync($request->id_ejemplares);
         $prestamo->save();
 
         return redirect('/admin/prestamos');

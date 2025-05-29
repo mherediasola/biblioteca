@@ -27,6 +27,25 @@
                     @endforeach  
                 @endif  
             </select>
+            <label class="form-label" for="id_ejemplares[]">Ejemplares</label>
+            <select name="id_ejemplares[]" id="id_ejemplares" class="form-control" multiple>
+                @if (empty($prestamo))
+                    <option value="" selected disabled>---- Elija una opción ----</option>
+                    <@foreach($ejemplares as $ejemplar)
+                    <option value="{{ $ejemplar->id }}">{{ $ejemplar->id }} - {{ $ejemplar->obra->titulo }} </option>
+                    @endforeach
+                @else
+                    <@foreach($ejemplares as $ejemplar)
+                    {{-- con la función in_array() busca en el array de ejemplares de un préstamo si ese ejemplar existe y 
+                    entonces lo selecciona. Con pluck() selecciono solo los ids de los ejemplares que coincidan con $ejemplar->id 
+                    y con toArray() lo convierto en un array, porque el segundo argumento tiene que ser array y $prestamo->ejemplares 
+                    es una colección --}}
+                    <option value="{{ $ejemplar->id }}" {{in_array($ejemplar->id, $prestamo->ejemplares->pluck('id')->toArray()) ? 'selected' : '' }}>
+                        {{ $ejemplar->id }} - {{ $ejemplar->obra->titulo }}
+                    </option>
+                    @endforeach  
+                @endif  
+            </select>
             <label class="form-label" for="pc">Estado-activo</label>
             <div>
                 <label class="form-label" for="si">Sí</label>

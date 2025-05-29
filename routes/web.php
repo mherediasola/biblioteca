@@ -13,8 +13,9 @@ use App\Http\Controllers\AutoresController;
 use App\Http\Controllers\ObrasController;
 use App\Http\Controllers\EjemplaresController;
 use App\Http\Controllers\ObrasAutoresController;
-use App\Http\Controllers\IndexAdminController;
 use App\Http\Controllers\PrestamosController;
+use App\Http\Controllers\ReservasController;
+use App\Http\Controllers\IndexAdminController;
 
 // ********************************************PARTE ADMINISTRADOR**************************************************
 
@@ -136,7 +137,13 @@ Route::get('/admin/prestamos/formulario/{id}', [PrestamosController::class, 'mos
 Route::post('/admin/prestamos/formulario/{id}', [PrestamosController::class, 'editar'])->name("editarPrestamo");
 Route::delete('/admin/prestamos/eliminar/{id}', [PrestamosController::class, 'eliminar'])->where(array('id' => '[0-9]*'))->name("eliminarPrestamo");
 
-
-
+//RESERVAS
+Route::get('/admin/reservas', [ReservasController::class, 'mostrar'])->name("reservas");
+Route::get('/admin/reservas/listar', [ReservasController::class, 'listar'])->name("reservasListar");
+Route::get('/admin/reservas/insertar', [ReservasController::class, 'mostrarFormIns'])->name("formularioReservasIns");
+Route::post('/admin/reservas/insertar', [ReservasController::class, 'insertar'])->name("crearReservas");
+Route::get('/admin/reservas/formulario/{id}', [ReservasController::class, 'mostrarFormEd'])->name("formularioReservasEd");
+Route::post('/admin/reservas/formulario/{id}', [ReservasController::class, 'editar'])->name("editarReserva");
+Route::delete('/admin/reservas/eliminar/{id}', [ReservasController::class, 'eliminar'])->where(array('id' => '[0-9]*'))->name("eliminarReserva");
 
 //******************************************************************************************************************************************************
