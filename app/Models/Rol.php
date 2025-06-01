@@ -9,6 +9,6 @@ class Rol extends Model
     protected $table = 'roles';
 
     public function usuarios(){
-        return $this->hasMany(User::class);
+        return $this->hasMany(User::class, 'id_rol');
     }
 }

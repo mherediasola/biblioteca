@@ -105,4 +105,13 @@ class ObrasController extends Controller
 
         return redirect('/admin/obras');
     }
+
+    public function dashboard(){
+        //MODIFICAR CONSULTA
+        $datos = Obra::getObrasMasPrestadas();
+
+        return view('dashboard', [
+            'datos' => $datos->toArray()
+        ]);
+    }
 }

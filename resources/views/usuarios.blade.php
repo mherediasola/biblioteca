@@ -22,7 +22,7 @@
                     @foreach($usuarios as $usuario)
                     <tr>
                         <td>{{$usuario->id}}</td>
-                        <td>{{$usuario->role->tipo}}</td>
+                        <td>{{$usuario->rol->tipo}}</td>
                         <td>{{$usuario->name}} {{$usuario->apellidos}}</td>
                         <td>{{$usuario->email}}</td>
                         <td><a href="{{route('formularioUsuariosEd', $usuario->id)}}" class='btn btn-secondary'><i class='fa-regular fa-pen-to-square'></i></a></td>

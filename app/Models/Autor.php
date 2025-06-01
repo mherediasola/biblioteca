@@ -11,4 +11,6 @@ class Autor extends Model
     public function pais(){
         return $this->belongsTo(Pais::class, 'id_pais');
     }
+
+    
 }

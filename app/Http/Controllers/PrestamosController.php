@@ -94,4 +94,6 @@ class PrestamosController extends Controller
 
         return redirect('/admin/prestamos');
     }
+
+    
 }

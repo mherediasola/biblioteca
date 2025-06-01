@@ -8,7 +8,7 @@
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h4>Roles</h4>
                     @if(auth()->user())
-                    @if(!auth()->user()->hasRole('Estudiante') && !auth()->user()->hasRole('Investigador'))
+                    @if(!auth()->user()->hasRole('estudiante') && !auth()->user()->hasRole('investigador'))
                     <button type="button" id="btn-crear-rol" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="bi bi-database-add"></i>+ Crear
                     </button>
@@ -35,7 +35,7 @@
 </div>
 
 @if(auth()->user())
-@if(!auth()->user()->hasRole('Estudiante') && !auth()->user()->hasRole('Investigador'))
+@if(!auth()->user()->hasRole('estudiante') && !auth()->user()->hasRole('investigador'))
 <!-- Modal para editar -->
 <div class="modal fade" id="rolEditModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

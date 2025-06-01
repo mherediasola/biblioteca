@@ -21,7 +21,7 @@
                 @endforeach
                 @else
                     <@foreach($roles as $rol)
-                    <option value="{{ $rol->id }}" {{$rol->id == $usuario->role->id ? 'selected' : '' }}>
+                    <option value="{{ $rol->id }}" {{$rol->id == $usuario->rol->id ? 'selected' : '' }}>
                         {{ $rol->tipo }}
                     </option>
                     @endforeach  

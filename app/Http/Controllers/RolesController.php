@@ -44,6 +44,14 @@ class RolesController extends Controller
         ]);
 
     }
+
+    public function mostrarEditar($id){
+        $rol = Rol::where('id', $id)->first();
+
+        return view('formularioRolesEditar', [
+            'rol' => $rol
+        ]);
+    }
     
     public function editar(Request $request, $id){
         $request->validate([

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 
 class Obra extends Model
@@ -26,5 +26,16 @@ class Obra extends Model
 
     public function ejemplares(){
         return $this->hasMany(Ejemplar::class);
+    }
+
+    public static function getObrasMasPrestadas(){
+        return self::select('obras.id', 'obras.titulo as titulo', 
+        DB::raw('COUNT(detalles_prestamo.id) AS total_prestamos'))
+        ->join('ejemplares', 'obras.id', '=', 'ejemplares.id_obra')
+        ->join('detalles_prestamo', 'ejemplares.id', '=', 'detalles_prestamo.id_ejemplar')
+        ->groupBy('obras.id', 'obras.titulo')
+        ->orderBy('total_prestamos', 'desc')
+        ->limit(5)
+        ->get();
     }
 }

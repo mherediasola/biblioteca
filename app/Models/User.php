@@ -20,12 +20,13 @@ class User extends Authenticatable
     
     protected $table = 'users';
     
-    public function role(){
+    public function rol(){
         return $this->belongsTo(Rol::class, 'id_rol');
     }
 
     public function hasRole($role){
-        return $this->roles && $this->roles->tipo == $role;
+        //dd($this->rol);
+        return $this->rol && $this->rol->tipo === $role;
     }
 
     public function mesas(){

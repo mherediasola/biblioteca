@@ -80,4 +80,13 @@ class AutoresController extends Controller
 
         return redirect('/admin/autores');
     }
+
+    public function dashboard(){
+        //MODIFICAR CONSULTA
+        $datos = Autor::getAutorMasLeido();
+
+        return view('dashboard', [
+            'datos' => $datos->toArray()
+        ]);
+    }
 }
