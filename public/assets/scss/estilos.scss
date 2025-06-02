@@ -1,4 +1,5 @@
 
+$font-size-md: 1.5rem;
 
 
 
@@ -7,3 +8,8 @@
 // tengo que cambiar la ruta del vendor, esa no es la de este proyecto
 @import'../../vendor/bootstrap-5.3.6/scss/bootstrap.scss';
 @import'biblioteca.scss';
+@import'biblioteca-front.scss';
+
+.navbar-brand {
+    font-size: $font-size-md;
+}

@@ -11,8 +11,8 @@ main{
     text-align: justify;
 }
 header{
-    background-color: rgb(70, 93, 170);
-    color:azure;
+    background-color: rgba(45, 47, 51, 1);
+    color: white;
 }
 header h1{
     margin: 0;
@@ -30,7 +30,7 @@ nav ul{
 }
 
 .navbar{
-    background-color: rgb(70, 93, 170);
+    background-color: rgba(255, 255, 255, 1);
 }
 
 nav ul li{
@@ -74,7 +74,7 @@ footer{
     font-weight: bold;
     color: azure;
     display: flex;
-    background-color:rgb(70, 93, 170);
+    background-color: rgba(0, 0, 0, 1);
     padding: 3%;
     margin-top: 3%;
 }

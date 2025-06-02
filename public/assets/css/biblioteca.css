@@ -14,8 +14,8 @@ main {
 }
 
 header {
-  background-color: rgb(70, 93, 170);
-  color: azure;
+  background-color: rgb(45, 47, 51);
+  color: white;
 }
 
 header h1 {
@@ -36,7 +36,7 @@ nav ul {
 }
 
 .navbar {
-  background-color: rgb(70, 93, 170);
+  background-color: rgb(255, 255, 255);
 }
 
 nav ul li {
@@ -80,7 +80,7 @@ footer {
   font-weight: bold;
   color: azure;
   display: flex;
-  background-color: rgb(70, 93, 170);
+  background-color: rgb(0, 0, 0);
   padding: 3%;
   margin-top: 3%;
 }
