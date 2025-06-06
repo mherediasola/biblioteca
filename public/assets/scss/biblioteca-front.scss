@@ -4,6 +4,13 @@ body{
     height: 100vh;
     width: 100%;
 }
+html,body{
+    overflow-x: hidden;
+}
+
+#headerUsuario{
+  background-color: white;
+}
 
 #mainUsuario{
     width: 100%;
@@ -36,6 +43,46 @@ footer .logo {
     border-radius: 50%;
     display: inline-block;
 }
+
+.card-noticia{
+  min-height: 100px;
+}
+
+.fila-cuenta{
+  height: 100%;
+  background-color: rgba(45, 47, 51, 1);
+  color: white;
+}
+
+.tarjeta {
+  min-height: 150px;
+  background: linear-gradient(to left, white 50%, #10a35a 50%);
+  background-size: 201%;
+  background-position: right;
+  transition: background-position 0.5s ease-out;
+}
+
+.tarjeta:hover {
+  background-position: left;
+  color: white;
+}
+
+.enlace-card{
+  text-decoration: none;
+  color:black;
+}
+
+.tarjeta:hover .enlace-card{
+   color: white;
+}
+
+#logo-footer{
+  width: 150px;
+  height: 150px;
+}
+
+
+
 
 
 /* Carousel base class */
@@ -114,3 +161,5 @@ footer .logo {
       margin-top: 7rem;
     }
   }
+
+  

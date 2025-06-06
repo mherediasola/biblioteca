@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" /> 
 </head>
 <body>
-    <header>
+    <header id="header-admin">
         <img/>
         <h1>Biblioteca</h1>
     </header>
@@ -69,33 +69,36 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mi cuenta</a>
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{auth()->user()->name}}</a>
                                 <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{{route('logout')}}">Mis datos</a></li>
                                     <li><a class="dropdown-item" href="{{route('logout')}}">Cerrar Sesión</a></li>
                                 </ul>
                             </li> 
                         @else
                             <li><a class="nav-item nav-link" href="{{route('obras')}}">Catálogo</a></li>
-                            <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mi cuenta</a>
-                            <ul class="dropdown-menu">
-                                {{-- <li><a class="dropdown-item" href="{{route('misPrestamos')}}">Mis préstamos</a></li> --}}
-                                <li><a class="dropdown-item" href="{{route('logout')}}">Cerrar Sesión</a></li>
-                            </ul>
-                            </li>
+                            
                         @endif
-                    @else
-                        <li><a class="nav-item nav-link" href="{{route('obras')}}">Catálogo</a></li>
+                        {{-- @else --}}
+                        {{-- <li><a class="nav-item nav-link" href="{{route('obras')}}">Catálogo</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mi cuenta</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{{route('formularioRegistro')}}">Registrarse</a></li>
                                 <li><a class="dropdown-item" href="{{route('login')}}">Iniciar sesión</a></li>
                             </ul>
-                            </li>
-                @endif
+                        </li> --}}
+                    @endif
                     @if(auth()->user())
-                        <li class="nav-item "><a class="nav-link" href="#">Bienvenido, {{auth()->user()->name}}</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{auth()->user()->name}}</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Mis datos</a></li>
+                                <li><a class="dropdown-item" href="#">Mis reservas</a></li>
+                                <li><a class="dropdown-item" href="#">Mis préstamos</a></li>
+                                <li><a class="dropdown-item" href="{{route('logout')}}">Cerrar Sesión</a></li>
+                            </ul>
+                        </li>
                     @endif
                 </ul>
                 </div>

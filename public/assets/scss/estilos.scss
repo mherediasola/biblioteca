@@ -1,15 +1,54 @@
 
 $font-size-md: 1.5rem;
 
+//variables globales
+$primario: #000e90;
+$secundario: #b20000; 
+$terciario: #009d4f;
+
+$primary: $primario;
+$secondary: $secundario;
+$success: $terciario;
 
 
 
 
-// tengo que cambiar la ruta del vendor, esa no es la de este proyecto
 @import'../../vendor/bootstrap-5.3.6/scss/bootstrap.scss';
 @import'biblioteca.scss';
 @import'biblioteca-front.scss';
 
+
+
 .navbar-brand {
     font-size: $font-size-md;
+}
+
+.card-body{
+    height: 100%;
+}
+
+.enlace-footer{
+    color: white;
+    font-weight: 400;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+}
+
+.enlace-footer:hover{
+    color: var(--terciario);
+}
+
+.vr{
+    height: 200px;
+    color: white;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 50px; /* Ajusta según sea necesario */
+  left: 100px;
+}
+
+.card-body:hover{
+    cursor:pointer;
 }

@@ -33,6 +33,8 @@ Route::post('/registro', [SesionController::class, 'registro'])->name('registro'
 
 Route::get('/', [IndexController::class, 'inicio'])->name('index');
 Route::get('/admin/obras', [ObrasController::class, 'mostrar'])->name("obras");
+Route::get('/contacto', [NavegacionController::class, 'contacto'])->name("contacto");
+Route::get('/servicios', [NavegacionController::class, 'servicios'])->name("servicios");
 
 Route::middleware('auth')->group(function() {
     //CERRAR SESIÓN
